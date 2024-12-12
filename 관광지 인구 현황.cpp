@@ -6,14 +6,12 @@
 
 using namespace std;
 
-// 장소 정보를 저장하기 위한 구조체
 struct Location {
     string name;
     string density;
     vector<string> restaurants;
 };
 
-// 장소 데이터 생성
 vector<Location> initializeLocations() {
     return {
         {"서울", "붐빔", {"식당A", "식당B", "식당C"}},
@@ -25,17 +23,15 @@ vector<Location> initializeLocations() {
     };
 }
 
-// 문자열 소문자 변환
 string toLower(string s) {
     transform(s.begin(), s.end(), s.begin(), 
               [](unsigned char c){ return tolower(c); });
     return s;
 }
 
-// 사용자에게 지역 입력 받기
 void getLocationInfo(const vector<Location>& locations) {
     string input;
-    cout << "지역을 선택하세요: ";
+    cout << "어느 지역으로 놀러가나요?: ";
     for (const auto& loc : locations) {
         cout << loc.name << " ";
     }
